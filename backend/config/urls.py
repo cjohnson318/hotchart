@@ -22,5 +22,7 @@ from chart import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', views.draw_chart, name='home'),
+    path('', views.home, name='home'),
+    path('line/', views.draw_line_chart, name='line-chart'),
+    path('hist/', views.draw_histogram, name='histogram'),
 ]

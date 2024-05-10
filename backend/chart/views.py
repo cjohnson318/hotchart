@@ -11,7 +11,7 @@ def generate_data(N: int, w: float) -> tuple[list[str], list[float]]:
         values.append(val)
     return labels, values
 
-def draw_chart(request):
+def draw_line_chart(request):
     N = 40
     w = 0.05
     labels, values = generate_data(N, w)
@@ -19,4 +19,17 @@ def draw_chart(request):
         "labels": labels,
         "values": values,
     }
-    return render(request, 'home.html', data)
+    return render(request, 'line-chart.html', data)
+
+def draw_histogram(request):
+    N = 40
+    w = 0.05
+    labels, values = generate_data(N, w)
+    data = {
+        "labels": labels,
+        "values": values,
+    }
+    return render(request, 'histogram.html', data)
+
+def home(request):
+    return render(request, 'home.html')
