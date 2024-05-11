@@ -1,5 +1,7 @@
 # Proof of Concept using Hotwire
 
+![](hotchart-screenshot.png)
+
 This project utilizes Hotwire technologies like Turbo Drive and Turbo Frames to provide a server side rendered Django application with a more performant and dynamic user experience.
 
 ## Getting Started
