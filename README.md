@@ -18,5 +18,5 @@ python3 manage.py runserver
 
 ## Resources
 
-[Django Tailwind](https://django-tailwind.readthedocs.io/en/latest/installation.html)
-[Django Browser Reload](https://github.com/adamchainz/django-browser-reload)
+  - [Django Tailwind](https://django-tailwind.readthedocs.io/en/latest/installation.html)
+  - [Django Browser Reload](https://github.com/adamchainz/django-browser-reload)
