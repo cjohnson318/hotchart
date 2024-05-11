@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 
-{% block title %}AR(1){% endblock %}
+{% block title %}Hotwire Examples{% endblock %}
 
 {% block content %}
-<div class="m-4">
-  <div>
-    <a data-turbo-method="get" href="{% url 'line-chart' %}">Line Chart</a>
-    <a data-turbo-method="get" href="{% url 'histogram' %}">Histogram</a>
+  <h1 class="text-2xl font-bold mb-4">Turbo Drive</h1>
+  <p class="mb-4">Turbo Drive acts on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML elements. Clicks on links and form submissions are intercepted by Hotwire automatically, and these replace the entire body of the document.</p>
+  <div class="mb-4">
+    <div>
+      <a class="text-blue-500" data-turbo-method="get" href="{% url 'line-chart' %}">Line Chart</a>
+    </div>
+    <div>
+      <a class="text-blue-500" data-turbo-method="get" href="{% url 'histogram' %}">Histogram</a>
+    </div>
   </div>
-</div>
+  <h1 class="text-2xl font-bold mt-8 mb-4">Turbo Frame</h1>
+  <p class="mb-4">Turbo Frames also act on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML elements. In this case, these HTML elements are wrapped in a <span class="font-mono bg-gray-200 rounded p-0.5">turbo-frame</span> element. After Hotwire intercepts a click or form submit from a Turbo Frame element, Hotwire swaps out the content of the Turbo Frame with the new HTML from the server. The catch is that the original and new HTML need to be wrapped in a Turbo Frame HTML element, and their id attributes need to match.</p>
+  <div class="mb-4">
+    <turbo-frame id="display-inline-chart">
+      <div>
+        <a class="text-blue-500" data-turbo-frame="line-chart" data-turbo-method="get" href="{% url 'inline-line-chart' %}">Line Chart</a>
+      </div>
+    </turbo-frame>
+  </div>
 {% endblock %}

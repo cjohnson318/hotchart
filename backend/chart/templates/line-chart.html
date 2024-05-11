@@ -3,16 +3,15 @@
 {% block title %}AR(1){% endblock %}
 
 {% block content %}
-<div class="m-4"
-  <h1 class="text-xxl">Simulate AR(1) Data as Line Chart</h1>
+  <h1 class="text-2xl font-bold">Simulate AR(1) Data as Line Chart</h1>
+  <h2 class="text-sm mb-4 text-gray-500">Turbo Drive Demo</h2>
   <div>
-    <a class="text-m" data-turbo-method="get" href="{% url 'line-chart' %}">New Data</a>
+    <a class="text-blue-500" data-turbo-method="get" href="{% url 'line-chart' %}">New Data</a>
   </div>
   <div>
-    <a class="text-m" data-turbo-method="get" href="{% url 'home' %}">Back</a>
+    <a class="text-blue-500" data-turbo-method="get" href="{% url 'home' %}">Back</a>
   </div>
   <canvas id="myChart" width="400" height="200"></canvas>
-</div>
 <script>
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {

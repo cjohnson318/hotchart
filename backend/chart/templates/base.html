@@ -1,17 +1,25 @@
+{% load static tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="turbo-refresh-method" content="morph">
+    {% tailwind_css %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.4/dist/turbo.es2017-umd.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/dist/stimulus.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@hotwired/strada@1.0.0-beta1/dist/strada.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/lib/index.min.js"></script> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/base.min.css" rel="stylesheet"> -->
   </head>
   <body>
-    {% block content %}{% endblock %}
+    <div class="mx-auto w-full sm:w-3/5 p-4">
+      <div>
+        <h1 class="my-8 text-4xl font-bold">Hotwire Examples</h1>
+      </div>
+      {% block content %}{% endblock %}
+    </div>
   </body>
 </html>
