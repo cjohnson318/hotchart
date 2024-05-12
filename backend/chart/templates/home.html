@@ -22,4 +22,12 @@
       </div>
     </turbo-frame>
   </div>
+  <h1 class="text-2xl font-bold mt-8 mb-4">Turbo Stream</h1>
+  <p class="mb-4">Turbo Streams allow you to update multiple HTML elements on a page with one HTTP request. As before, once a user interacts with a <span class="font-mono bg-gray-200 rounded p-0.5">a</span> or <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML element, Hotwire intercepts that HTTP request, turns it into an AJAX request, and then the Django view function assinged to that endpoint can modify multiple elements on the page. Using the <span class="font-mono bg-gray-200 rounded p-0.5">django-turbo-helper</span> Django app, we can return a Turbo Stream Response that can modify multiple HTML elements, each using one of seven supported Turbo Stream actions: append, prepend, update, replace, remove, before, or after.</p>
+  <div class="mb-4">
+    <div id="stream-chart">
+      <a href="{% url 'helper-stream' %}" class="text-blue-500" data-turbo-prefetch="false">Streamed Line Chart and Data</a>
+    </div>
+    <div id="stream-data"></div>
+  </div>
 {% endblock %}

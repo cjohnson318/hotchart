@@ -12,25 +12,25 @@
     <a class="text-blue-500" data-turbo-method="get" href="{% url 'home' %}">Back</a>
   </div>
   <canvas id="myChart" width="400" height="200"></canvas>
-<script>
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'bar', // Change to 'line', 'pie', etc. for different chart types
-    data: {
-      labels: {{ labels|safe }},
-      datasets: [{
-        label: 'Data',
-        data: {{ values|safe }},
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.2)',
-        ],
-        borderColor: [
-          'rgba(54, 162, 235, 1)',
-        ]
-      }]
-    },
-    options: {}
-  });
-</script>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar', // Change to 'line', 'pie', etc. for different chart types
+      data: {
+        labels: {{ labels|safe }},
+        datasets: [{
+          label: 'Data',
+          data: {{ values|safe }},
+          backgroundColor: [
+            'rgba(54, 162, 235, 0.2)',
+          ],
+          borderColor: [
+            'rgba(54, 162, 235, 1)',
+          ]
+        }]
+      },
+      options: {}
+    });
+  </script>
 {% endblock %}
 

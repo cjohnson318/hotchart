@@ -43,6 +43,7 @@ THIRD_PARTY_APPS = [
     "tailwind",
     "theme",
     "django_browser_reload",
+    "turbo_helper",
 ]
 
 IN_HOUSE_APPS = [
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "turbo_helper.middleware.TurboMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

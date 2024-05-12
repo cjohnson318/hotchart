@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from turbo_helper import turbo_stream
 
 import random
 
@@ -26,13 +27,46 @@ def home(request):
     return render(request, 'home.html')
 
 def draw_line_chart(request):
+    '''Draw a line chart with Chart.js.
+
+    Used for Turbo Drive demo.
+    '''
     data = bundle_data_for_chartjs(N, w)
     return render(request, 'line-chart.html', data)
 
 def draw_histogram(request):
+    '''Draw a histogram with Chart.js.
+    
+    Used for Turbo Drive demo.
+    '''
     data = bundle_data_for_chartjs(N, w)
     return render(request, 'histogram.html', data)
 
 def draw_inline_line_chart(request):
+    '''Draw an inline line chart with Chart.js.
+
+    Used for Turbo Frame demo.
+    '''
     data = bundle_data_for_chartjs(N, w)
     return render(request, 'inline-line-chart.html', data)
+
+def helper_stream(request):
+    '''Used for django-turbo-helper example.
+    '''
+    data = bundle_data_for_chartjs(N, w)
+    response = turbo_stream.response([
+        turbo_stream.update(
+            target="stream-chart",
+            template="streamed-line-chart.html",
+            context=data,
+            request=request,
+        ),
+        turbo_stream.update(
+            target="stream-data",
+            template="streamed-data.html",
+            context=data,
+            request=request,
+        )
+    ])
+
+    return response

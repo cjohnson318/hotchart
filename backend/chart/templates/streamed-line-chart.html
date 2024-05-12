@@ -1,19 +1,14 @@
-{% extends 'base.html' %}
-
-{% block title %}AR(1){% endblock %}
+{% load turbo_helper %}
 
 {% block content %}
-  <h1 class="text-2xl font-bold">Simulate AR(1) Data as Line Chart</h1>
-  <h2 class="text-sm mb-4 text-gray-500">Turbo Drive Demo</h2>
   <div>
-    <a class="text-blue-500" data-turbo-method="get" href="{% url 'line-chart' %}">New Data</a>
+    <a class="text-blue-500" data-turbo-prefetch="false" data-turbo-method="get" href="{% url 'helper-stream' %}">Line Chart</a>
   </div>
   <div>
-    <a class="text-blue-500" data-turbo-method="get" href="{% url 'home' %}">Back</a>
+    <canvas id="myStreamedChart" width="400" height="200"></canvas>
   </div>
-  <canvas id="myChart" width="400" height="200"></canvas>
   <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = document.getElementById('myStreamedChart').getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'line', // Change to 'line', 'pie', etc. for different chart types
       data: {
@@ -33,4 +28,3 @@
     });
   </script>
 {% endblock %}
-
