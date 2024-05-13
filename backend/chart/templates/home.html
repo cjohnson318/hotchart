@@ -4,7 +4,7 @@
 
 {% block content %}
   <h1 class="text-2xl font-bold mb-4">Turbo Drive</h1>
-  <p class="mb-4">Turbo Drive acts on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML elements. Clicks on links and form submissions are intercepted by Hotwire automatically, and these replace the entire body of the document.</p>
+  <p class="mb-4">Turbo Drive acts on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> DOM elements. Clicks on links and form submissions are intercepted by Hotwire automatically, and these replace the entire body of the document.</p>
   <div class="mb-4">
     <div>
       <a class="text-blue-500" data-turbo-method="get" href="{% url 'line-chart' %}">Line Chart</a>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <h1 class="text-2xl font-bold mt-8 mb-4">Turbo Frame</h1>
-  <p class="mb-4">Turbo Frames also act on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML elements. In this case, these HTML elements are wrapped in a <span class="font-mono bg-gray-200 rounded p-0.5">turbo-frame</span> element. After Hotwire intercepts a click or form submit from a Turbo Frame element, Hotwire swaps out the content of the Turbo Frame with the new HTML from the server. The catch is that the original and new HTML need to be wrapped in a Turbo Frame HTML element, and their id attributes need to match.</p>
+  <p class="mb-4">Turbo Frames also act on <span class="font-mono bg-gray-200 rounded p-0.5">a</span> and <span class="font-mono bg-gray-200 rounded p-0.5">form</span> DOM elements. In this case, these DOM elements are wrapped in a <span class="font-mono bg-gray-200 rounded p-0.5">turbo-frame</span> element. After Hotwire intercepts a click or form submit from a Turbo Frame element, Hotwire swaps out the content of the Turbo Frame with the new HTML fragment from the server. The catch is that the original and new HTML fragment need to be wrapped in a Turbo Frame DOM element, and their ID attributes need to match.</p>
   <div class="mb-4">
     <turbo-frame id="display-inline-chart">
       <div>
@@ -23,7 +23,7 @@
     </turbo-frame>
   </div>
   <h1 class="text-2xl font-bold mt-8 mb-4">Turbo Stream</h1>
-  <p class="mb-4">Turbo Streams allow you to update multiple HTML elements on a page with one HTTP request. As before, once a user interacts with a <span class="font-mono bg-gray-200 rounded p-0.5">a</span> or <span class="font-mono bg-gray-200 rounded p-0.5">form</span> HTML element, Hotwire intercepts that HTTP request, turns it into an AJAX request, and then the Django view function assinged to that endpoint can modify multiple elements on the page. Using the <span class="font-mono bg-gray-200 rounded p-0.5">django-turbo-helper</span> Django app, we can return a Turbo Stream Response that can modify multiple HTML elements, each using one of seven supported Turbo Stream actions: append, prepend, update, replace, remove, before, or after.</p>
+  <p class="mb-4">Turbo Streams allow you to update multiple DOM elements on a page with one AJAX request. As before, once a user interacts with a <span class="font-mono bg-gray-200 rounded p-0.5">a</span> or <span class="font-mono bg-gray-200 rounded p-0.5">form</span> DOM element, Hotwire intercepts that HTTP request, turns it into an AJAX request, and then the Django view function assinged to that endpoint can modify multiple elements on the page. Using the <span class="font-mono bg-gray-200 rounded p-0.5">django-turbo-helper</span> Django app, we can return a Turbo Stream Response that can modify multiple DOM elements, each using one of seven supported Turbo Stream actions: append, prepend, update, replace, remove, before, or after.</p>
   <div class="mb-4">
     <div id="stream-chart">
       <a href="{% url 'helper-stream' %}" class="text-blue-500" data-turbo-prefetch="false">Streamed Line Chart and Data</a>
